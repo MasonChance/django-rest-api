@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    env_file: mtg_deck_lib/.env 
+    build: .
+    command: python manage.py runserver 0.0.0.0:8080
+    volumes:
+      - .:/code
+    ports:
+      - "8080:8080"
